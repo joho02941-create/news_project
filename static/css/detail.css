@@ -1,0 +1,18 @@
+.detail_title {
+    margin-top: 50px;
+    text-align: center;
+    color: #0C2F75;
+}
+
+.detail-img {
+    padding: 50px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.container1 {
+    margin-bottom: 50px;
+}

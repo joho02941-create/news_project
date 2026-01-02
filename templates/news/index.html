@@ -1,0 +1,292 @@
+{% extends "news/base.html" %}
+{% load static %}
+
+{% block title %} Bosh sahifa {% endblock title %}
+
+{% block content %}
+    <!-- Top News Start-->
+    <div class="top-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 tn-left">
+                        <div class="row tn-slider">
+                            {% for news in news_list %}
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{{ news.image.url }}">
+                                    <div class="tn-title">
+                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 tn-right">
+                        <div class="row">
+                            {% for news in top_news %}
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{{ news.image.url }}">
+                                    <div class="tn-title">
+                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Top News End-->
+
+    <!-- Category News Start-->
+    <div class="cat-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Sports</h2>
+                        <div class="row cn-slider">
+                            {% for sport_news in sport %}
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{{ sport_news.image.url }}">
+                                    <div class="cn-title">
+                                        <a href="{{ sport_news.get_absolute_url }}">{{ sport_news.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h2>Politics</h2>
+                        <div class="row cn-slider">
+                            {% for pol_news in siyosat %}
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{{ pol_news.image.url }}">
+                                    <div class="cn-title">
+                                        <a href="{{ pol_news.get_absolute_url }}">{{ pol_news.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Social</h2>
+                        <div class="row cn-slider">
+                            {% for soc_news in jamiyat %}
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{{ soc_news.image.url }}">
+                                    <div class="cn-title">
+                                        <a href="{{ soc_news.get_absolute_url }}">{{ soc_news.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Business</h2>
+                        <div class="row cn-slider">
+                            {% for bus_news in biznes %}
+                            <div class="col-md-6">
+                                <div class="cn-img">
+                                    <img src="{{ bus_news.image.url }}">
+                                    <div class="cn-title">
+                                        <a href="{{ bus_news.get_absolute_url }}">{{ bus_news.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Category News End-->
+
+ <!-- Tab News Start-->
+<div class="tab-news">
+    <div class="container">
+        <div class="row">
+
+            <!-- LEFT TABS -->
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <!-- FEATURED -->
+                    <div id="featured" class="container tab-pane active">
+                        {% for news in top_news %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- POPULAR -->
+                    <div id="popular" class="container tab-pane fade">
+                        {% for news in top_news %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- LATEST -->
+                    <div id="latest" class="container tab-pane fade">
+                        {% for news in news_list %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.get_absolute_url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">
+                                    {{ news.title|truncatewords:5 }}
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT TABS -->
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div id="m-viewed" class="container tab-pane active">
+                        {% for news in top_news %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="m-read" class="container tab-pane fade">
+                        {% for news in top_news %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div id="m-recent" class="container tab-pane fade">
+                        {% for news in top_news %}
+                        <div class="tn-news">
+                            <div class="tn-img">
+                                {% if news.image %}
+                                <img src="{{ news.image.url }}">
+                                {% endif %}
+                            </div>
+                            <div class="tn-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Tab News End-->
+
+
+    <!-- Main News Start-->
+    <div class="main-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            {% for news in news_list %}
+                            <div class="col-md-4">
+                                <div class="mn-img">
+                                    <img src="{{ news.image.url }}" />
+                                    <div class="mn-title">
+                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="mn-list">
+                            <h2>Read More</h2>
+                            {% for news in news_list %}
+                            <ul>
+                                <li><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Main News End-->
+{% endblock content %}

@@ -1,0 +1,41 @@
+.news-flex-container {
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;       /* keyingi row */
+    gap: 20px;             /* itemlar orasidagi bo‘sh joy */
+    padding-bottom: 100px;
+}
+
+.news-item {
+    flex: 0 0 48%;         /* 1 qatorda 2 ta item */
+    display: flex;         /* item ichidagi rasm+matnni flex qilamiz */
+    align-items: center;   /* vertikal tekislash */
+    gap: 10px;             /* rasm va matn orasidagi bo‘sh joy */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+.news-item img.ct-img {
+    width: 250px;           /* rasm o‘lchami */
+    height: 250px;
+    object-fit: cover;     /* rasm containerga sig‘sin */
+    border-radius: 5px;    /* ixtiyoriy style */
+}
+
+.news-item a.news-title {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.news-item a.news-title:hover {
+    color: #007bff;
+}
+
+.news-item img.ct-img:hover{
+    width: 275px;
+    height: 275px;
+    transition: 1s;
+}

@@ -1,0 +1,21 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Siyosat sahifa {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="news-flex-container">
+            {% for news in politics_news %}
+                <div class="news-item">
+                    <a href="{{ news.get_absolute_url }}">
+                        {% if news.image %}
+                            <img class="ct-img" src="{{ news.image.url }}" alt="{{ news.title }}">
+                        {% endif %}
+                    </a>
+                    <a href="{{ news.get_absolute_url }}" class="news-title">{{ news.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
