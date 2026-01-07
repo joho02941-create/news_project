@@ -1,0 +1,22 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block title %} Logout sahifasi {% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        <h2 class="logout-title">Veb-saytdan chiqish</h2>
+        <p class="logout-desc">
+            Haqiqatan ham akkauntingizdan chiqmoqchimisiz?
+        </p>
+
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+
+            <button type="submit" class="btn-logout">
+                Logout
+            </button>
+        </form>
+    </div>
+
+{% endblock content %}

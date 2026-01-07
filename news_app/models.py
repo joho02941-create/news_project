@@ -1,7 +1,9 @@
+from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
 
 from django.db import models
+
 
 
 
@@ -30,7 +32,6 @@ class News(models.Model):
                               choices=Status.choices,
                               default=Status.Draft)
 
-
     class Meta:
         ordering = ('-publish_time',)
 
@@ -48,3 +49,25 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.email
+
+    @property
+    def number_of_comments(self):
+        return Comment.objects.filter(news=self).count()
+
+class Comment(models.Model):
+    news = models.ForeignKey(News,
+                             on_delete=models.CASCADE,
+                             related_name='comments'
+                             )
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name='comments')
+    body = models.TextField()
+    created_time = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created_time',)
+
+    def __str__(self):
+        return f'Comment by {self.user.username} to {self.news.title}'

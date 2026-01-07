@@ -1,0 +1,17 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title  %} Foydalanuvchi ma'lumotlarini o'zgartirish{% endblock title %}
+
+{% block content %}
+    <div class="login-dashboard">
+        <h1 class="login-title">Foydalanuvchi ma'lumotlarini o'zgartirish</h1>
+        <p class="login-desc">O'zingiz haqingizdagi ma'lumotlarni quyidagi forma orqali o'zgartirishingiz mumkin:</p>
+        <form method="post" enctype="multipart/form-data" class="login-form">{% csrf_token %}
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <button type="submit" class="btn-login">O'zgarishlarni saqlash</button>
+        </form>
+    </div>
+
+{% endblock content %}

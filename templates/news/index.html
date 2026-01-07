@@ -1,5 +1,6 @@
 {% extends "news/base.html" %}
 {% load static %}
+{% load hitcount_tags %}
 
 {% block title %} Bosh sahifa {% endblock title %}
 
@@ -15,7 +16,14 @@
                                 <div class="tn-img">
                                     <img src="{{ news.image.url }}">
                                     <div class="tn-title">
-                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                        <a href="{{ news.get_absolute_url }}">
+                                            {{ news.title }}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for news %}
+                                            </p>
+                                        </a>
+                                        <p><i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}</p>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +38,13 @@
                                 <div class="tn-img">
                                     <img src="{{ news.image.url }}">
                                     <div class="tn-title">
-                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                        <a href="{{ news.get_absolute_url }}">
+                                            {{ news.title }}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +68,13 @@
                                 <div class="cn-img">
                                     <img src="{{ sport_news.image.url }}">
                                     <div class="cn-title">
-                                        <a href="{{ sport_news.get_absolute_url }}">{{ sport_news.title}}</a>
+                                        <a href="{{ sport_news.get_absolute_url }}">
+                                            {{ sport_news.title}}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for sport_news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +90,13 @@
                                 <div class="cn-img">
                                     <img src="{{ pol_news.image.url }}">
                                     <div class="cn-title">
-                                        <a href="{{ pol_news.get_absolute_url }}">{{ pol_news.title}}</a>
+                                        <a href="{{ pol_news.get_absolute_url }}">
+                                            {{ pol_news.title}}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for pol_news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +111,13 @@
                                 <div class="cn-img">
                                     <img src="{{ soc_news.image.url }}">
                                     <div class="cn-title">
-                                        <a href="{{ soc_news.get_absolute_url }}">{{ soc_news.title}}</a>
+                                        <a href="{{ soc_news.get_absolute_url }}">
+                                            {{ soc_news.title}}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for soc_news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +132,13 @@
                                 <div class="cn-img">
                                     <img src="{{ bus_news.image.url }}">
                                     <div class="cn-title">
-                                        <a href="{{ bus_news.get_absolute_url }}">{{ bus_news.title}}</a>
+                                        <a href="{{ bus_news.get_absolute_url }}">
+                                            {{ bus_news.title}}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for bus_news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +181,13 @@
                                 {% endif %}
                             </div>
                             <div class="tn-title">
-                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                <a href="{{ news.get_absolute_url }}">
+                                    {{ news.title }}
+                                    <p>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        {% get_hit_count for news %}
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         {% endfor %}
@@ -159,7 +203,13 @@
                                 {% endif %}
                             </div>
                             <div class="tn-title">
-                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                <a href="{{ news.get_absolute_url }}">
+                                    {{ news.title }}
+                                    <p>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        {% get_hit_count for news %}
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         {% endfor %}
@@ -171,12 +221,16 @@
                         <div class="tn-news">
                             <div class="tn-img">
                                 {% if news.image %}
-                                <img src="{{ news.get_absolute_url }}">
+                                <img src="{{ news.image.url }}">
                                 {% endif %}
                             </div>
                             <div class="tn-title">
                                 <a href="{{ news.get_absolute_url }}">
                                     {{ news.title|truncatewords:5 }}
+                                    <p>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        {% get_hit_count for news %}
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -212,6 +266,10 @@
                             </div>
                             <div class="tn-title">
                                 <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                <p>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    {% get_hit_count for news %}
+                                </p>
                             </div>
                         </div>
                         {% endfor %}
@@ -226,7 +284,13 @@
                                 {% endif %}
                             </div>
                             <div class="tn-title">
-                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                <a href="{{ news.get_absolute_url }}">
+                                    {{ news.title }}
+                                    <p>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        {% get_hit_count for news %}
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         {% endfor %}
@@ -241,7 +305,13 @@
                                 {% endif %}
                             </div>
                             <div class="tn-title">
-                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                <a href="{{ news.get_absolute_url }}">
+                                    {{ news.title }}
+                                    <p>
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        {% get_hit_count for news %}
+                                    </p>
+                                </a>
                             </div>
                         </div>
                         {% endfor %}
@@ -267,7 +337,13 @@
                                 <div class="mn-img">
                                     <img src="{{ news.image.url }}" />
                                     <div class="mn-title">
-                                        <a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+                                        <a href="{{ news.get_absolute_url }}">
+                                            {{ news.title }}
+                                            <p style="color: white">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                {% get_hit_count for news %}
+                                            </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +356,15 @@
                             <h2>Read More</h2>
                             {% for news in news_list %}
                             <ul>
-                                <li><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></li>
+                                <li>
+                                    <a href="{{ news.get_absolute_url }}">
+                                        {{ news.title }}
+                                        <p>
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            {% get_hit_count for news %}
+                                        </p>
+                                    </a>
+                                </li>
                             </ul>
                             {% endfor %}
                         </div>

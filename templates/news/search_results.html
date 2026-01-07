@@ -1,0 +1,28 @@
+{% extends 'news/base.html' %}
+{% load hitcount_tags %}
+
+{% block title %} Qidiruv natijasi {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="welcome-text">Qiduruv natijalari</h1>
+        <div class="news-flex-container">
+            {% for news in search_results %}
+                <div class="news-item">
+                    <a href="{{ news.get_absolute_url }}">
+                        {% if news.image %}
+                            <img class="ct-img" src="{{ news.image.url }}" alt="{{ news.title }}">
+                        {% endif %}
+                    </a>
+                    <a href="{{ news.get_absolute_url }}" class="news-title">
+                        {{ news.title }}
+                        <p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            {% get_hit_count for news %}
+                        </p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

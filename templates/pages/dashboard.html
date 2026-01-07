@@ -1,0 +1,50 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+    <div class="container margin">
+        <h3 class="welcome-text">Xush kelibsiz, {{ user.username }}</h3>
+        <h2 class="section-title">Siz haqingizda ma’lumotlar</h2>
+
+        <div class="section-title">
+            <img src="{{ profile.photo.url }}" alt="profile image" style="width: 300px; height: 300px; border-radius: 50% ">
+        </div>
+        <h4 class="section-title">Profile-picture</h4>
+        <h4 class="section-title">Tug'ilgan yilingiz: {{ profile.date_of_birth }}</h4>
+        <div class="profile-card">
+            <div class="profile-row">
+                <label>Username:</label>
+                <input value="{{ user.username }}" readonly placeholder="Kiritilmagan">
+            </div>
+
+            <div class="profile-row">
+                <label>Email:</label>
+                <input value="{{ user.email }}" readonly placeholder="Kiritilmagan">
+            </div>
+
+            <div class="profile-row">
+                <label>Ism:</label>
+                <input value="{{ user.first_name }}" readonly placeholder="Kiritilmagan">
+            </div>
+
+            <div class="profile-row">
+                <label>Familiya:</label>
+                <input value="{{ user.last_name }}" readonly placeholder="Kiritilmagan">
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="{% url 'password_change' %}" class="btn btn-primary">
+                Parolni almashtirish
+            </a>
+
+            <a href="{% url 'logout' %}" class="btn btn-danger">
+                Logout
+            </a>
+            <a href="{% url 'edit_user' %}" class="btn btn-primary">Ma'lumotlarni o'zgartirish</a>
+        </div>
+    </div>
+
+{% endblock content %}

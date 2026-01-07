@@ -1,14 +1,53 @@
 {% extends 'news/base.html' %}
 {% load static %}
+{% load hitcount_tags %}
 
 {% block title %} {{ news.title }} {% endblock title %}
 
 {% block content %}
     <div class="container container1">
         <h2 class="detail_title" >{{news.title}}</h2>
+        <p><i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %} <i class="fas fa-comments"></i> {{ comments_count }} </p>
         <div class="dt-img">
             <img src="{{ news.image.url }}" class="detail-img" alt="{{ news.title }}">
         </div>
         <p class="detail_body">{{news.body | linebreaks }}</p>
     </div>
+    {% if request.user.is_authenticated and request.user.is_superuser %}
+    	<div class="card-footer align-center">
+            <a href="{% url 'edit_news' news.slug %}">Tahrirlash</a> |
+            <a href="{% url 'delete_news' news.slug %}">Ochirish</a> |
+        </div>
+    {% endif %}<br>
+
+    {% for comment in comments %}
+    	<div class="comments" style="padding: 10px">
+            <p class="font-weight-bold">
+                {{ comment.user }}
+                <span class="text-muted font-weight-normal">
+                    {{ comment.created_time }}
+                </span>
+            </p>
+            {{ comment.body | linebreaks }}
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <div class="col-md-8 card mb-4 mt-3">
+            <div class="card-body">
+                <h3>Izoh qoldirish</h3>
+                <form method="post" style="margin-top: 1.3em">{% csrf_token %}
+                    {{ comments_form.as_p }}
+                    <button type="submit" class="btn btn-info btn-lg">
+                        Yuborish <i class="fas fa-comments"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <div class="card-body">
+            <p class="text-danger">Faqatgina ro'yhatdan o'tgan foydalanuvchilar izoh qoldira oladi</p>
+            <p>Izoh qoldirish uchun <a href="{% url 'signup' %}">ro'yxatdan o'ting</a> yoki <a href="{% url 'login' %}">login qiling</a></p>
+        </div>
+    {% endif %}
+
 {% endblock content %}

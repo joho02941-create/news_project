@@ -1,5 +1,6 @@
 {% extends 'news/base.html' %}
 {% load static %}
+{% load hitcount_tags %}
 
 {% block title %} Jamiyat sahifa {% endblock title %}
 
@@ -13,7 +14,13 @@
                             <img class="ct-img" src="{{ news.image.url }}" alt="{{ news.title }}">
                         {% endif %}
                     </a>
-                    <a href="{{ news.get_absolute_url }}" class="news-title">{{ news.title }}</a>
+                    <a href="{{ news.get_absolute_url }}" class="news-title">
+                        {{ news.title }}
+                        <p>
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            {% get_hit_count for news %}
+                        </p>
+                    </a>
                 </div>
             {% endfor %}
         </div>

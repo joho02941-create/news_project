@@ -1,0 +1,85 @@
+/* PROFILE DASHBOARD */
+.margin {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.profile-dashboard {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.welcome-text {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* PROFILE CARD */
+.profile-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.profile-row label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.profile-row input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: not-allowed;
+}
+
+/* ACTION BUTTONS */
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}

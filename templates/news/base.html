@@ -20,6 +20,8 @@
         <link href= "{% static 'css/slick-theme.css' %}" rel="stylesheet">
         <link href="{% static 'css/categories.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+        <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
 
         <!-- Template Stylesheet -->
         <link href= "{% static 'css/style.css' %}" rel="stylesheet">
@@ -68,10 +70,10 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <div class="b-search">
-                            <input type="text" placeholder="Search">
+                        <form method="get" action="{% url 'search_results' %}" class="b-search">
+                            <input type="search" name="q" placeholder="Search" class="form-control">
                             <button><i class="fa fa-search"></i></button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -102,6 +104,28 @@
                             <a href=""><i class="fab fa-linkedin-in"></i></a>
                             <a href=""><i class="fab fa-instagram"></i></a>
                             <a href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div style="margin: 10px; background-color: #FF6F61; padding: 8px 15px; border-radius: 8px; text-align: center; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s;">
+                            {% if request.user.is_authenticated %}
+                                <p style="margin: 0;">
+                                    <a href="{% url 'user_profile' %}"
+                                       style="color: white; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;"
+                                       onmouseover="this.style.textDecoration='underline'; this.style.transform='scale(1.05)';"
+                                       onmouseout="this.style.textDecoration='none'; this.style.transform='scale(1)';">
+                                        My Profile
+                                    </a>
+                                    <a href="{% url 'logout' %}" class="btn-danger">Logout</a>
+                                </p>
+                            {% else %}
+                                <p style="margin: 0;">
+                                    <a href="{% url 'login' %}"
+                                       style="color: white; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;"
+                                       onmouseover="this.style.textDecoration='underline'; this.style.transform='scale(1.05)';"
+                                       onmouseout="this.style.textDecoration='none'; this.style.transform='scale(1)';">
+                                        Saytga kirish
+                                    </a>
+                                </p>
+                            {% endif %}
                         </div>
                     </div>
                 </nav>

@@ -364,6 +364,23 @@ button.btn:hover {
     border: 1px solid #ffffff;
 }
 
+.profile{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+}
+
+.nav-bar .profile p a{
+    padding: 3px 0;
+    text-align: center;
+    font-size: 14px;
+    background: #FF6F61;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: white;
+}
+
 .nav-bar .social a i {
     color: #ffffff;
 }

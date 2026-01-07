@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title  %} Muvaffaqiyatli ro'yxatdan o'tdingiz {% endblock title %}
+
+{% block content %}
+    <div class="password-done-dashboard container">
+
+        <div class="success-icon">✔</div>
+
+        <h1 class="password-done-title">{{ new_user.first_name }}, xush kelibsiz</h1>
+        <p class="password-done-desc">Muvaffaqiyatli ro'yxatdan o'tdingiz!</p>
+        <p class="password-done-desc">Endi saytga <a href="{% url 'login' %}">login</a> qilishingiz mumkin</p>
+    </div>
+
+{% endblock content %}
