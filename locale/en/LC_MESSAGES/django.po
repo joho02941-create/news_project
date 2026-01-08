@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-08 07:40+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\config\settings.py:123
+msgid "Uzbek"
+msgstr ""
+
+#: .\config\settings.py:124
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:125
+msgid "Russian"
+msgstr ""
+
+#: .\templates\news\index.html:6
+msgid "Bosh sahifa"
+msgstr "Home page"
+
+#: .\templates\news\index.html:68
+msgid " Sports "
+msgstr "Sports"
+
+#: .\templates\news\index.html:90
+msgid " Siyosat "
+msgstr "Politics"
+
+#: .\templates\news\index.html:111
+msgid " Ijtimoiy "
+msgstr "Social"
+
+#: .\templates\news\index.html:132
+msgid " Biznes "
+msgstr "Business"
+
+#: .\templates\news\index.html:166
+msgid " Tavsiya etilgan yangiliklar "
+msgstr "Featured news"
+
+#: .\templates\news\index.html:169
+msgid " Mashxur yangiliklar "
+msgstr "Popular news"
+
+#: .\templates\news\index.html:172
+msgid " So'ngi yangiliklar "
+msgstr "Latest news"
+
+#: .\templates\news\index.html:251
+msgid " Ko'p ko'rilgan "
+msgstr "Most viewed"
+
+#: .\templates\news\index.html:254
+msgid " Eng ko'p oqilgan "
+msgstr "Most read"
+
+#: .\templates\news\index.html:257
+msgid " Eng so'ngi "
+msgstr "Most recent"
+
+#: .\templates\news\index.html:360
+msgid " Ko'proq "
+msgstr "Read more"

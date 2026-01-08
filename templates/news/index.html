@@ -1,8 +1,13 @@
 {% extends "news/base.html" %}
 {% load static %}
 {% load hitcount_tags %}
+{% load i18n %}
 
-{% block title %} Bosh sahifa {% endblock title %}
+{% block title %}
+    {% blocktrans %}
+    	Bosh sahifa
+    {% endblocktrans %}
+{% endblock title %}
 
 {% block content %}
     <!-- Top News Start-->
@@ -61,7 +66,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Sports</h2>
+                        <h2>{% blocktrans %} Sports {% endblocktrans %}</h2>
                         <div class="row cn-slider">
                             {% for sport_news in sport %}
                             <div class="col-md-6">
@@ -83,7 +88,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h2>Politics</h2>
+                        <h2>{% blocktrans %} Siyosat {% endblocktrans %}</h2>
                         <div class="row cn-slider">
                             {% for pol_news in siyosat %}
                             <div class="col-md-6">
@@ -104,7 +109,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h2>Social</h2>
+                        <h2>{% blocktrans %} Ijtimoiy {% endblocktrans %}</h2>
                         <div class="row cn-slider">
                             {% for soc_news in jamiyat %}
                             <div class="col-md-6">
@@ -125,7 +130,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h2>Business</h2>
+                        <h2>{% blocktrans %} Biznes {% endblocktrans %}</h2>
                         <div class="row cn-slider">
                             {% for bus_news in biznes %}
                             <div class="col-md-6">
@@ -159,13 +164,13 @@
             <div class="col-md-6">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="pill" href="#featured">Featured News</a>
+                        <a class="nav-link active" data-toggle="pill" href="#featured">{% blocktrans %} Tavsiya etilgan yangiliklar {% endblocktrans %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#popular">Popular News</a>
+                        <a class="nav-link" data-toggle="pill" href="#popular">{% blocktrans %} Mashxur yangiliklar {% endblocktrans %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#latest">Latest News</a>
+                        <a class="nav-link" data-toggle="pill" href="#latest">{% blocktrans %} So'ngi yangiliklar {% endblocktrans %}</a>
                     </li>
                 </ul>
 
@@ -244,13 +249,13 @@
             <div class="col-md-6">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="pill" href="#m-viewed">Most Viewed</a>
+                        <a class="nav-link active" data-toggle="pill" href="#m-viewed">{% blocktrans %} Ko'p ko'rilgan {% endblocktrans %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#m-read">Most Read</a>
+                        <a class="nav-link" data-toggle="pill" href="#m-read">{% blocktrans %} Eng ko'p oqilgan {% endblocktrans %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#m-recent">Most Recent</a>
+                        <a class="nav-link" data-toggle="pill" href="#m-recent">{% blocktrans %} Eng so'ngi {% endblocktrans %}</a>
                     </li>
                 </ul>
 
@@ -353,7 +358,7 @@
 
                     <div class="col-lg-3">
                         <div class="mn-list">
-                            <h2>Read More</h2>
+                            <h2>{% blocktrans %} Ko'proq {% endblocktrans %}</h2>
                             {% for news in news_list %}
                             <ul>
                                 <li>

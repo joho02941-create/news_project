@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+
+# Env / virtual environments
+env/
+venv/
+ENV/
+.venv/
+*.env
+*.venv
+
+# Django
+*.sqlite3
+*.log
+*.pot
+*.pyc
+local_settings.py
+media/
+staticfiles/
+static_root/
+# If you use collectstatic
+# /static/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pytest / testing
+.cache/
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pipenv
+Pipfile.lock
+
+# dotenv
+.env
+.env.*
+
+# node / frontend (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# Mac/Linux swap / temp files
+*.swp
+*~

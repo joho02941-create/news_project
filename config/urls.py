@@ -1,3 +1,4 @@
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -6,7 +7,9 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",include('news_app.urls')),
+] + i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('',include('news_app.urls')),
     path('account/', include('accounts.urls')),
     path(
         'reset/<uidb64>/<token>/',
@@ -15,7 +18,7 @@ urlpatterns = [
         ),
         name='password_reset_confirm'
     ),
-]
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
