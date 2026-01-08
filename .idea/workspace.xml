@@ -7,7 +7,13 @@
     <list default="true" id="3f007c10-9bde-411f-9e9a-8426e813da33" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_app/migrations/0007_category_name_en_category_name_ru_category_name_uz_and_more.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/news_app/translation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
@@ -163,7 +169,7 @@
       <workItem from="1767656952554" duration="11414000" />
       <workItem from="1767745730901" duration="14512000" />
       <workItem from="1767830886654" duration="7161000" />
-      <workItem from="1767839859066" duration="5377000" />
+      <workItem from="1767839859066" duration="5706000" />
     </task>
     <servers />
   </component>
