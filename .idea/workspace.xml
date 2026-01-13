@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f007c10-9bde-411f-9e9a-8426e813da33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locale/en/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news_app/migrations/0007_category_name_en_category_name_ru_category_name_uz_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news_app/translation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +152,8 @@
       <workItem from="1767656952554" duration="11414000" />
       <workItem from="1767745730901" duration="14512000" />
       <workItem from="1767830886654" duration="7161000" />
-      <workItem from="1767839859066" duration="5706000" />
+      <workItem from="1767839859066" duration="6394000" />
+      <workItem from="1768090247127" duration="48000" />
     </task>
     <servers />
   </component>
